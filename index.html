@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+  	<head>
+    	<meta charset="UTF-8">
+    	<title>Modalize - Plugin Example</title>
+    	<link type="text/css" rel="stylesheet" href="css/style.css">
+    	<script type="text/javascript" src="libs/jquery-3.1.1.min.js"></script>
+    	<script type="text/javascript" src="js/modalize.js"></script>
+  	</head>
+  	<body>
+  		<a href="#" class="modal-button" data-modal-title="My Modal Title" data-modal-text="Text to show in modal">Open Modal</a>
+  		<a href="#" class="modal-button" data-modal-title="My Modal Title 2" data-modal-text="Text to show in modal 2">Open Modal 2</a>
+  	</body>
+  	<script>
+		  // add click event handler to any element with class modal-button
+      $(document).ready(function() {
+        $('.modal-button').on('click', $(this).modalize);
+      });
+  	</script>
+</html>
