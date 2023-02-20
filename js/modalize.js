@@ -27,7 +27,6 @@ $.fn.modalize = function(options) {
 		modal.find('.modal-title').text(modalTitle);
 		modal.find('.modal-text').text(modalText);
 
-		modal.append(closeButton);
 		$('body').append(overlay);
 		$('body').append(modal);
 		centerModal()
