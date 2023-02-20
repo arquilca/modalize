@@ -24,6 +24,8 @@ $.fn.modalize = function(options) {
 	};
 
 	const init = function() {
+		$(modal).find('.modal-title').text(modalTitle);
+		$(modal).find('.modal-text').text(modalText);
 		modal.find('.modal-title').text(modalTitle);
 		modal.find('.modal-text').text(modalText);
 
