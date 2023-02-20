@@ -28,6 +28,7 @@ body {
 .modal {
 	position: absolute;
 	width: 50%;
+	max-width: 800px;
 	height: auto;
 	border: solid thin #eee;
 	border-radius: 10px;

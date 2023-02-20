@@ -18,39 +18,34 @@ $.fn.modalize = function(options) {
 		.css('color', modalOptions.foreground);
 	// close button
 	const closeButton = $('<div class="close-button">X</div>');
+	const myWindow = $(window)
 
-	// initialize by setting the text and displaying the modal
+	
+	const centerModal = function() {
+		modal.css('top', myWindow.height() * .5 - modal.height());
+		modal.css('left', myWindow.width() * .25);
+	};
+
 	const init = function() {
-		// set modal title and modal text
-		$(modal).find('.modal-title').text(modalTitle);
-		$(modal).find('.modal-text').text(modalText);
+		modal.find('.modal-title').text(modalTitle);
+		modal.find('.modal-text').text(modalText);
 
-		// append title, text, and close button to modal div
 		modal.append(closeButton);
-
-		// display the modal on the page
 		$('body').append(overlay);
 		$('body').append(modal);
-
-		// dispay modal in center position
-		modal.css('top', $(window).height() * .5 - $(modal).height());
-		modal.css('left', $(window).width() * .25);
+		centerModal()
 
 		// add event handlers for closing the modal
 		closeButton.on('click', close.bind(this));
 
-		// TODO - add event handler for window resize
+		myWindow.resize(centerModal)
 	};
 
 	// function to close the modal
 	const close = function() {
 		overlay.remove();
 		modal.remove();
-	};
-
-	/// TODO - Update position when window is resized or scrolled
-	const updatePosition = function() {
-
+		myWindow.off('resize', centerModal)
 	};
 
 	// call init function
