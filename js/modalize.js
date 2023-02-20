@@ -9,10 +9,13 @@ $.fn.modalize = function(options) {
 	const modalTitle = $(this).attr('data-modal-title');
 	const modalText= $(this).attr('data-modal-text');
 	const overlay = $('<div class="overlay"></div>');
-	const modal = $('<div class="modal"></div>')
-		.append('<div class="modal-title"></div>')
-		.append('<div class="modal-text"></div>')
-		.append('<div class="close-button">X</div>')
+	const modal = $(`
+			<div class="modal">
+				<div class="modal-title"></div>
+				<div class="modal-text"></div>
+				<div class="close-button">X</div>
+			</div>
+		`)
 		.css('background-color', modalOptions.background)
 		.css('color', modalOptions.foreground);
 	const myWindow = $(window)
