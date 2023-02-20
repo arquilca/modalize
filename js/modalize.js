@@ -8,34 +8,33 @@ $.fn.modalize = function(options) {
 	// modal text
 	const modalTitle = $(this).attr('data-modal-title');
 	const modalText= $(this).attr('data-modal-text');
-	// overlay element
 	const overlay = $('<div class="overlay"></div>');
-	// modal element
 	const modal = $('<div class="modal"></div>')
 		.append('<div class="modal-title"></div>')
 		.append('<div class="modal-text"></div>')
+		.append('<div class="close-button">X</div>')
 		.css('background-color', modalOptions.background)
 		.css('color', modalOptions.foreground);
-	// close button
-	const closeButton = $('<div class="close-button">X</div>');
 	const myWindow = $(window)
 
-	
+
 	const centerModal = function() {
 		modal.css('top', myWindow.height() * .5 - modal.height());
 		modal.css('left', myWindow.width() * .25);
 	};
 
 	const init = function() {
+		$(modal).find('.modal-title').text(modalTitle);
+		$(modal).find('.modal-text').text(modalText);
 		modal.find('.modal-title').text(modalTitle);
 		modal.find('.modal-text').text(modalText);
 
-		modal.append(closeButton);
 		$('body').append(overlay);
 		$('body').append(modal);
 		centerModal()
 
 		// add event handlers for closing the modal
+		const closeButton = $('.close-button');
 		closeButton.on('click', close.bind(this));
 
 		myWindow.resize(centerModal)
