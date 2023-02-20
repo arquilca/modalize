@@ -1,0 +1,23 @@
+{
+  "name": "modalize",
+  "version": "1.0.0",
+  "description": "Modal plugin using jQuery.",
+  "main": "js/modalize.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/arquilca/modalize.git"
+  },
+  "keywords": [
+    "modal",
+    "jquery"
+  ],
+  "author": "Abraham Quilca",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/arquilca/modalize/issues"
+  },
+  "homepage": "https://github.com/arquilca/modalize#readme"
+}
